@@ -1,0 +1,427 @@
+
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  text-align: center;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+.vista {
+  display: none;
+}
+
+.vista.activa {
+  display: block;
+}
+
+.logo {
+  color: #e30613;
+
+}
+
+#banner {
+  min-height: 50vh;
+  background-image: url("../img/BANNER.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* SECCIONES */
+section {
+  padding: 16px;
+}
+
+#categorias {
+  padding: 40px 20px;
+}
+
+.cards-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.categoria {
+  position: relative;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+/* Overlay oscuro */
+.categoria .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+   opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.categoria h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.categoria p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.categoria:hover .overlay  {
+  opacity: 1;
+}
+
+.categoria.mesas {
+  background-image: url("../img/BANNER - MESAS.png");
+}
+
+.categoria.poltronas {
+  background-image: url("../img/BANNER-POLTRONAS.png");
+}
+
+.categoria.sillas {
+  background-image: url("../img/BANNER-SILLAS.png");
+}
+
+.categoria.butacos {
+  background-image: url("../img/BANNER-BUTACOS.png");
+}
+
+
+
+/* PRODUCTOS */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding-top: 25px;
+}
+
+.producto {
+  background: #f3f3f3;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* BOTONES */
+button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #e30613;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* DESKTOP (solo mejoras visuales) */
+@media (min-width: 768px) {
+  .cards-categorias {
+    flex-direction: row;
+  }
+
+  .grid-productos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ====== MODAL AR ====== */
+
+.ar-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER AR */
+.ar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+/* TEXTO INSTRUCTIVO */
+.ar-instrucciones {
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 10px 16px;
+  color: #555;
+}
+
+/* BOTÓN CERRAR */
+.ar-header button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #e30613;
+}
+
+
+/* ===== MODAL DETALLE PRODUCTO ===== */
+
+.detalle-modal {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 9998;
+  overflow-y: auto;
+}
+
+.detalle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+.detalle-header button {
+  background: none;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  color: #e30613;
+}
+
+.detalle-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+
+  /* 👇 CLAVE para una sola línea */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 40px);
+}
+.detalle-contenido {
+  padding: 20px;
+  text-align: left;
+}
+
+.detalle-contenido img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.descripcion {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.medidas p {
+  margin: 4px 0;
+}
+
+.ar-info {
+  margin: 16px 0;
+  font-weight: bold;
+}
+
+.btn-detalle {
+  display: inline-block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 20px;
+  background: #e30613;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none; /* quita subrayado */
+}
+
+/* ===== MENÚ HAMBURGUESA ===== */
+
+#menu-btn {
+  font-size: 1.6rem;
+  width: 13%;
+  background-color: #e30613;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+}
+
+/* Menú oculto */
+#menu {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 60%;
+  height: calc(100vh - 60px);
+  background: #ffffffcc;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.15);
+  z-index: 999;
+  flex-direction: column;
+  padding: 20px;
+  gap: 12px;
+}
+
+/* Botones del menú */
+#menu button {
+  background: #e30613;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ===== BENEFICIOS AR SIMPLE ===== */
+
+#beneficios-ar {
+  padding: 40px 20px;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.beneficio {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px 12px;
+  text-align: center;
+}
+
+.beneficio .icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.beneficio h3 {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.beneficio p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.form-contacto input{
+  width: 80%;
+  padding: 5px;
+  margin-left: 5%;
+  margin-bottom: 8px;
+}
+.form-contacto textarea{
+  width: 80%;
+  height: 90px;
+  padding: 5px;
+  margin-left: 5%;
+  margin-bottom: 8px;
+}
+.form-contacto button{
+  width: 40%;
+  margin-bottom: 30px;
+}
+
+/* ===== LOGIN MODAL ===== */
+
+.login-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.login-modal.hidden {
+  display: none;
+}
+
+.login-box {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 8px;
+}
+
+.login-box p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.login-cerrar {
+  background: #ccc;
+  color: #333;
+}

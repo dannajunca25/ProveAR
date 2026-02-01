@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provefabrica - Catálogo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- model-viewer para AR web -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+ <header>
+  <div class="logo">
+    <img src="img/logo-prove.webp" alt="Provefabrica">
+  </div>
+
+  <button id="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<nav id="menu">
+  <button onclick="mostrarVista('inicio')">Home</button>
+  <button onclick="mostrarVista('catalogo')">Catálogo</button>
+  <button onclick="mostrarVista('experiencia-ar')">Experiencia AR</button>
+  <button onclick="mostrarVista('contacto')">Contacto</button>
+  <button id="btn-logout" class="btn-logout">Cerrar sesión</button>
+
+</nav>
+
+<section id="inicio" class="vista activa">
+  <!-- BANNER -->
+  <section id="banner">
+
+  </section>
+
+  <!-- Presentación -->
+  <section id="presentacion">
+    <h2>Proveemos Oportunidades</h2>
+    <p>
+     En Provefabrica, proveemos oportunidades porque sabemos que cada proyecto es un sueño en construcción. Nos enfocamos en importar, comercializar y fabricar la sillonería al por mayor, para que los resultados siempre superen las expectativas. <strong>¡Vamos juntos hacia el éxito! </strong>
+    </p>
+  </section>
+
+  <!-- Categorías -->
+  <section id="categorias">
+  <h2>Nuestros productos</h2>
+
+  <div class="cards-categorias">
+    <div class="categoria mesas">
+      <div class="overlay">
+        <h3>Mesas</h3>
+        <p>Mesas funcionales y decorativas para cualquier espacio.</p>
+      </div>
+    </div>
+
+    <div class="categoria poltronas">
+      <div class="overlay">
+        <h3>Poltronas</h3>
+        <p>Confort y diseño pensados para el descanso.</p>
+      </div>
+    </div>
+
+    <div class="categoria sillas">
+      <div class="overlay">
+        <h3>Sillas</h3>
+        <p>Sillas ergonómicas y versátiles.</p>
+      </div>
+    </div>
+
+    <div class="categoria butacos">
+      <div class="overlay">
+        <h3>Butacos</h3>
+        <p>Ideales para barras y espacios informales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Botón Experiencia AR -->
+  <section>
+    <button id="btn-ar" onclick="mostrarVista('experiencia-ar')">Experiencia AR</button>
+  </section>
+
+</section>
+
+  <!-- PRODUCTOS -->
+
+  <section id="catalogo" class="vista">
+  
+  <section id="productos">
+    <h2>Todos los productos</h2>
+    <div class="filtros">
+      <input type="text" id="busqueda" placeholder="Buscar...">
+
+      <select id="categoria">
+    <option value="todas">Todas las categorías</option>
+    <option value="Poltronas">Poltronas</option>
+    <option value="Butacos">Butacos</option>
+    <option value="Sillas">Sillas</option>
+    <option value="Mesas">Mesas</option>
+  </select>
+
+      <select id="ordenar">
+        <option value="nombre-asc">Nombre A-Z</option>
+        <option value="nombre-desc">Nombre Z-A</option>
+      </select>
+    </div>
+
+    <div id="grid-productos" class="grid-productos">
+      <!-- Productos se generan con JS -->
+    </div>
+  </section>
+
+    <script src="js/main.js"></script>
+
+    </section>
+
+  <section id="experiencia-ar" class="vista">
+  <h2>Experiencia en Realidad Aumentada</h2>
+<iframe width="100%" height="300" src="https://www.youtube.com/embed/UuKGyzqu7wY?si=UIWUSeFUwqcaxou3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <p>
+    Explora nuestros productos en tu espacio real usando
+    Realidad Aumentada desde tu celular.
+  </p>
+ <section id="beneficios-ar">
+  <h2>Experiencia AR</h2>
+
+  <div class="beneficios-grid">
+    <div class="beneficio">
+      <span class="icon">📐</span>
+      <h3>Escala real</h3>
+      <p>Visualiza el producto con dimensiones reales.</p>
+    </div>
+
+    <div class="beneficio">
+      <span class="icon">🏠</span>
+      <h3>En tu espacio</h3>
+      <p>Mira cómo se adapta a tu entorno.</p>
+    </div>
+
+    <div class="beneficio">
+      <span class="icon">🤳</span>
+      <h3>Desde el móvil</h3>
+      <p>Sin apps adicionales.</p>
+    </div>
+
+    <div class="beneficio">
+      <span class="icon">✅</span>
+      <h3>Decisión segura</h3>
+      <p>Reduce errores antes de comprar.</p>
+    </div>
+  </div>
+</section>
+  <p>
+    Ingresa al catálogo y presiona
+    <strong>“Visualizar en AR”</strong>.
+  </p>
+</section>
+
+<section id="contacto" class="vista">
+  <h2>Contacto</h2>
+
+  <form class="form-contacto">
+    <input type="text" placeholder="Nombre" required>
+    <input type="email" placeholder="Correo" required>
+    <input type="number" placeholder="Telefono" required>
+    <input type="text" placeholder="Asunto" required>
+    <textarea placeholder="Mensaje"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.030422791746!2d-74.16847752526073!3d4.764696495210554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f83b4170bf887%3A0x4939552765e749bf!2sProvefabrica%20SAS!5e0!3m2!1ses!2sco!4v1769323936250!5m2!1ses!2sco" width="95%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</section>
+
+<div id="login-modal" class="login-modal hidden">
+  <div class="login-box">
+    <h2>Acceso a experiencia AR</h2>
+
+    <p>Para visualizar los productos en realidad aumentada, inicia sesión.</p>
+
+    <input type="text" id="login-nombre" placeholder="Nombre">
+    <input type="email" id="login-email" placeholder="Correo electrónico">
+
+    <button id="btn-login">Continuar</button>
+
+    <button class="login-cerrar" onclick="cerrarLogin()">Cancelar</button>
+  </div>
+</div>
+
+
+
+</body>
+</html>
