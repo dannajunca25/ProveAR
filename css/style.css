@@ -425,3 +425,7 @@ button {
   background: #ccc;
   color: #333;
 }
+
+button{
+    cursor: pointer;
+}

@@ -13,7 +13,7 @@
 
   <!-- HEADER -->
  <header>
-  <div class="logo">
+  <div class="logo" onclick="mostrarVista('inicio')"  style="cursor:pointer;">
     <img src="img/logo-prove.webp" alt="Provefabrica">
   </div>
 
@@ -48,28 +48,28 @@
   <h2>Nuestros productos</h2>
 
   <div class="cards-categorias">
-    <div class="categoria mesas">
+    <div class="categoria mesas"  onclick="mostrarVista('catalogo', 'Mesas')">
       <div class="overlay">
         <h3>Mesas</h3>
         <p>Mesas funcionales y decorativas para cualquier espacio.</p>
       </div>
     </div>
 
-    <div class="categoria poltronas">
+    <div class="categoria poltronas" onclick="mostrarVista('catalogo', 'Poltronas')">
       <div class="overlay">
         <h3>Poltronas</h3>
         <p>Confort y diseño pensados para el descanso.</p>
       </div>
     </div>
 
-    <div class="categoria sillas">
+    <div class="categoria sillas"   onclick="mostrarVista('catalogo', 'Sillas')" >
       <div class="overlay">
         <h3>Sillas</h3>
         <p>Sillas ergonómicas y versátiles.</p>
       </div>
     </div>
 
-    <div class="categoria butacos">
+    <div class="categoria butacos"   onclick="mostrarVista('catalogo', 'Butacos')">
       <div class="overlay">
         <h3>Butacos</h3>
         <p>Ideales para barras y espacios informales.</p>

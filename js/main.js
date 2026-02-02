@@ -4,7 +4,7 @@ let productos = [];
    NAVEGACIÓN SPA
 ====================================================== */
 
-window.mostrarVista = function (id) {
+window.mostrarVista = function (id,  categoria = null) {
   document.querySelectorAll(".vista").forEach(vista => {
     vista.classList.remove("activa");
   });
@@ -13,6 +13,19 @@ window.mostrarVista = function (id) {
   if (vistaActiva) {
     vistaActiva.classList.add("activa");
   }
+
+  if (categoria) {
+    estadoFiltros.categoria = categoria;
+
+
+    const selectCategoria = document.getElementById("categoria");
+    if (selectCategoria) {
+      selectCategoria.value = categoria;
+    }
+
+    aplicarFiltros();
+  }
+
 
   const menu = document.getElementById("menu");
   if (menu) menu.style.display = "none";
